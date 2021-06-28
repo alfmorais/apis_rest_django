@@ -23,3 +23,4 @@ Isso significa que toda requisição feita a um servidor é única pois estas re
 O *REST* não muda isso, mais coloca toda a responsabilidade de "lembrar" os dados (estados) da requisição no cliente, que pode ser seu navegador / computador / aplicação. 
 
 Isso porque a cada requisição, o servidor que responde pela mesma pode ser diferente. Ele pode nunca ter tido contado com o cliente que o está contactando. Por outro lado, o cliente é o mesmo e o cliente sabe quais dados precisa seja para realizar autenticações ou mesmo para acessar diferentes *endpoints*.
+
