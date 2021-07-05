@@ -8,6 +8,11 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
+
+Token = '0fc7ee81e0ca107ef62759bde5101522a86a8dad'
+
+Token Joaquim = d0932b08ae71d2f6dfb42131bd770f2947ddf516
+
 """
 
 import os
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
     # biblioteca instalada
     'django_filters',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -130,9 +136,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # configuração do Django REST FRAMEWORK
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-    )
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 2
 }
